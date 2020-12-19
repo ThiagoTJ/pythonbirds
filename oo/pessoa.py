@@ -10,12 +10,17 @@ class Pessoa:
 
 if __name__ == '__main__':
     filha = Pessoa(nome='Laura')
-    esposa = Pessoa(nome='Suellen')
-    pai = Pessoa(esposa, filha, nome='Thiago')
+    pai = Pessoa(filha, nome='Thiago')
 
     print(Pessoa.cumprimentar(pai))
     print(pai.name)
     print(pai.age)
 
-    for pai in pai.family:
-        print(pai.name)
+    for filha in pai.family:
+        print(filha.name)
+
+    pai.sobrenome = 'Gonçalves'
+    del pai.family
+
+    print(pai.__dict__)
+    print(filha.__dict__)
