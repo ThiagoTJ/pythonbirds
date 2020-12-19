@@ -17,5 +17,5 @@ if __name__ == '__main__':
     print(pai.name)
     print(pai.age)
 
-    for filha in pai.family:
-        print(filha.name)
+    for pai in pai.family:
+        print(pai.name)
