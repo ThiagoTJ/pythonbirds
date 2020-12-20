@@ -67,6 +67,15 @@ Exemplo:
 >>>carro.girar_a_direita()
 >>>carro.calcular_direcao()
 >>>'Leste'
+>>>carro.girar_a_direita()
+>>>carro.calcular_direcao()
+>>>'Sul'
+>>>carro.girar_a_direita()
+>>>carro.calcular_direcao()
+>>>'Oeste'
+>>>carro.girar_a_direita()
+>>>carro.calcular_direcao()
+>>>'Norte'
 >>>carro.girar_a_esquerda()
 >>>carro.calcular_direcao()
 >>>'Norte'
@@ -74,6 +83,27 @@ Exemplo:
 >>>carro.calcular_direcao()
 >>>'Oeste'
 '''
+
+NORTE = 'Norte'
+LESTE = 'Leste'
+SUL = 'Sul'
+OESTE = 'Oeste'
+
+
+class Direcao:
+    rotacao_a_direita_dct = {NORTE: LESTE,
+                             LESTE: SUL, SUL: OESTE, OESTE: NORTE}
+    rotacao_a_esquerda_dct = {NORTE: OESTE,
+                              OESTE: SUL, SUL: LESTE, LESTE: NORTE}
+
+    def __init__(self):
+        self.value = NORTE
+
+    def girar_a_direita(self):
+        self.value = self.rotacao_a_direita_dct[self.value]
+
+    def girar_a_esquerda(self):
+        self.value = self.rotacao_a_esquerda_dct[self.value]
 
 
 class Motor:
