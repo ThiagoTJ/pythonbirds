@@ -23,8 +23,12 @@ class Homem(Pessoa):
     pass
 
 
+class Mutante(Pessoa):
+    eyes = 3
+
+
 if __name__ == '__main__':
-    filha = Pessoa(nome='Laura')
+    filha = Mutante(nome='Laura')
     pai = Homem(filha, nome='Thiago')
 
     print(Homem.cumprimentar(pai))
@@ -55,3 +59,4 @@ if __name__ == '__main__':
     print(isinstance(pessoa, Homem))
     print(isinstance(pai, Pessoa))
     print(isinstance(pai, Homem))
+    print(filha.eyes)
