@@ -93,11 +93,11 @@ class Passaro(Ator):
 
     def foi_lancado(self):
         """
-        Método que retorna verdaeira se o pássaro já foi lançado e falso caso contrário
+        Método que retorna verdadeira se o pássaro já foi lançado e falso caso contrário
 
         :return: booleano
         """
-        return True
+        return not self._tempo_de_lancamento is None
 
     def colidir_com_chao(self):
         """
@@ -132,7 +132,8 @@ class Passaro(Ator):
         :param tempo_de_lancamento:
         :return:
         """
-        pass
+        self._angulo_de_lancamento = angulo
+        self._tempo_de_lancamento = tempo_de_lancamento
 
 
 class PassaroAmarelo(Passaro):
